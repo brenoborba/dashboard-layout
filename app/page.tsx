@@ -1,7 +1,9 @@
+import PageTitle from '@/components/ui/page-title'
+
 export default function Home() {
   return (
     <div>
-      <h1>home</h1>
+      <PageTitle>Dashboard</PageTitle>
     </div>
   )
 }
