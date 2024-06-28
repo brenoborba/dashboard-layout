@@ -35,6 +35,7 @@
     "trailingComma": "es5",
     "tabWidth": 2,
     "jsxSingleQuote": true,
-    "bracketSameLine": false
+    "bracketSameLine": false,
+    "singleAttributePerLine": true
   }
 }
