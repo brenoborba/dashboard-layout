@@ -1,17 +1,22 @@
 import { SunIcon, MoonIcon, UserIcon, Bars3Icon } from '@heroicons/react/20/solid'
 import React, { useState } from 'react'
 
-const Header = ({ className }: { className: string }) => {
+type Props = {
+  className: string
+  handleMobileNav?: any
+}
+
+const Header = (props: Props) => {
   const [dark, setDark] = useState<boolean>(false)
   const handleDarkMode = () => {
     setDark(!dark)
     document.body.classList.toggle('dark')
   }
   return (
-    <div id='header' className={className}>
+    <div id='header' className={props.className}>
       <div className='flex items-center w-full justify-between'>
         <button className='block lg:invisible'>
-          <Bars3Icon className='size-6' />
+          <Bars3Icon className='size-6 text-neutral-900' onClick={props.handleMobileNav} />
         </button>
         <div className='flex items-center gap-6'>
           <button

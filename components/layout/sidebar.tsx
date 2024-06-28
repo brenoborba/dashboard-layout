@@ -1,9 +1,8 @@
 import { ChartPieIcon, CodeBracketIcon, DocumentChartBarIcon, UsersIcon } from '@heroicons/react/20/solid'
 import Link from 'next/link'
-import { ReactElement } from 'react'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { twMerge } from 'tailwind-merge'
+import { ReactElement } from 'react'
+import Logo from './logo'
 
 export type NavItem = {
   name: string
@@ -36,29 +35,19 @@ export const navItems: NavItem[] = [
   },
 ]
 
-const Sidebar = ({ className }: { className: string }) => {
+const Sidebar = () => {
   const pathname = usePathname()
   return (
-    <aside className={className}>
-      <div className='flex items-center justify-start'>
-        <Image
-          src='/logo.svg'
-          width={45}
-          height={45}
-          alt='Mobo tech logo, black and white'
-          className='mr-1 object-cover xl:ml-2 lg:ml-1'
-        />
-        <h1 className='xl:text-2xl font-bold font-poppins lg:text-xl'>Mobo</h1>
-        <span className='font-normal font-poppins xl:text-2xl -m-0.5 lg:text-xl'>Tech</span>
-      </div>
+    <aside className='bg-neutral-800 text-neutral-100 p-4 lg:w-52 xl:w-60 hidden lg:block border-neutral-300/50 dark:border-neutral-700/50 dark:bg-neutral-900 xl:space-y-5 lg:space-y-4'>
+      <Logo />
       <nav>
-        <ul className='space-y-2 xl:py-8'>
+        <ul className='space-y-2'>
           {navItems.map((item: NavItem) => {
             const isActive = pathname === item.href
             return (
               <li
                 key={item.name}
-                className={`${isActive ? ' bg-neutral-600 rounded-lg' : 'group hover:bg-neutral-600 rounded-lg'}`}
+                className={`${isActive ? ' bg-neutral-700 rounded-lg' : 'group hover:bg-neutral-700 rounded-lg'}`}
               >
                 <Link href={item.href} className='flex items-center p-2'>
                   {item.icon}
