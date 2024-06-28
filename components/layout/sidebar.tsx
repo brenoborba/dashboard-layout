@@ -49,7 +49,10 @@ const Sidebar = () => {
                 key={item.name}
                 className={`${isActive ? ' bg-neutral-700 rounded-lg' : 'group hover:bg-neutral-700 rounded-lg'}`}
               >
-                <Link href={item.href} className='flex items-center p-2'>
+                <Link
+                  href={item.href}
+                  className='flex items-center p-2'
+                >
                   {item.icon}
                   <span
                     className={`text-neutral-400 ms-2 xl:pt-0.5 ${isActive ? 'text-white' : 'group-hover:text-white'} transition-colors`}

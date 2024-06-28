@@ -13,10 +13,16 @@ const Header = (props: Props) => {
     document.body.classList.toggle('dark')
   }
   return (
-    <div id='header' className={props.className}>
+    <div
+      id='header'
+      className={props.className}
+    >
       <div className='flex items-center w-full justify-between'>
         <button className='block lg:invisible'>
-          <Bars3Icon className='size-6 text-neutral-900' onClick={props.handleMobileNav} />
+          <Bars3Icon
+            className='size-6 text-neutral-900 dark:text-neutral-100'
+            onClick={props.handleMobileNav}
+          />
         </button>
         <div className='flex items-center gap-6'>
           <button
