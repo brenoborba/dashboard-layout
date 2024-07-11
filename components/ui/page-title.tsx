@@ -5,7 +5,7 @@ type Props = {
 }
 
 const PageTitle = (props: Props) => {
-  return <h2 className='text-3xl font-bold tracking-tight'>{props.children}</h2>
+  return <h2 className='text-3xl font-bold tracking-tight mb-4 xs:mb-2'>{props.children}</h2>
 }
 
 export default PageTitle
