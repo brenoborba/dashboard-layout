@@ -26,7 +26,7 @@ const Header = (props: Props) => {
         </button>
         <div className='flex items-center gap-6'>
           <button
-            className='border hover:bg-neutral-200 transition-colors p-1 rounded-md border-neutral-700 dark:invert'
+            className='border hover:bg-neutral-200 text-neutral-900 transition-colors p-1 rounded-md border-neutral-700 dark:invert'
             onClick={handleDarkMode}
           >
             {dark ? <SunIcon className='size-4' /> : <MoonIcon className='size-4' />}
