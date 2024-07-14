@@ -12,7 +12,7 @@ https://mobotech-dashboard.vercel.app/
 
 ### Dashboard:
 ![image](https://github.com/user-attachments/assets/5955e124-3d44-4f6c-861a-c2f1a3efd21a)
-![image](https://github.com/user-attachments/assets/fd456ebf-6285-4641-8ef5-64907990daba)
+<image src="https://github.com/user-attachments/assets/fd456ebf-6285-4641-8ef5-64907990daba" width="350px" height="700px" />
 
 
 
