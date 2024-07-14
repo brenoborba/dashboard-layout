@@ -1,10 +1,12 @@
-# Dashboard Project
+# Dashboard Project 📊
 
 ## Description
-This project is a fully responsive dashboard application featuring tables, charts, and a role-based layout. Built using Next.js, Tailwind CSS, and ShadcnUI, the dashboard is designed to provide a seamless and intuitive user experience across devices of all sizes.
+This project is a fully responsive dashboard application featuring tables, charts, and a role-based layout. Built using **Next.js**, **Tailwind CSS**, and **ShadcnUI**, the dashboard is designed to provide a seamless and intuitive user experience across devices of all sizes.
+
+🚧 Under Development: More features and pages coming soon!
 
 ## Live preview available at:
-https://dashboard-layout-eta.vercel.app/
+https://mobotech-dashboard.vercel.app/
 
 ## Main pages
 
