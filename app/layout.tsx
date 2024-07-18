@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const poppins = Poppins({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-poppins' })
 
 export const metadata: Metadata = {
-  title: 'Application Sidebar Layout for using flex',
-  description: '',
+  title: 'Mobotech Dashboard',
+  description: 'Time tracking and project management application',
 }
 
 export default function RootLayout({
