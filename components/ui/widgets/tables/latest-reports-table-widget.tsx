@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader } from '../../card'
 
 export function LatestReports() {
   return (
-    <Card className='size-full'>
+    <Card className='size-full overflow-y-auto'>
       <CardHeader>
         <h2 className='text-lg font-semibold'>Latest Reports</h2>
       </CardHeader>

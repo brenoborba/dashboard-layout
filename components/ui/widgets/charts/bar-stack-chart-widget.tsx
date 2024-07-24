@@ -4,22 +4,26 @@ import { TrendingUp } from 'lucide-react'
 import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
+import {
+  ChartConfig,
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartTooltip,
+  ChartTooltipContent,
+} from '@/components/ui/chart'
 import { projectsSeries } from '@/lib/data'
 import { chartConfig } from '@/lib/utils'
 
-export function BarChartWidget() {
+export function BarStackedChart() {
   return (
     <Card className='size-full'>
       <CardHeader>
-        <CardTitle>Reported hours</CardTitle>
+        <CardTitle>Proportion of Reported Hours</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
       </CardHeader>
       <CardContent>
-        <ChartContainer
-          config={chartConfig}
-          className='w-full lg:max-h-60'
-        >
+        <ChartContainer config={chartConfig}>
           <BarChart
             accessibilityLayer
             data={projectsSeries}
@@ -32,43 +36,30 @@ export function BarChartWidget() {
               axisLine={false}
               tickFormatter={(value) => value.slice(0, 3)}
             />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent indicator='dashed' />}
-            />
+            <ChartTooltip content={<ChartTooltipContent hideLabel />} />
+            <ChartLegend content={<ChartLegendContent />} />
             <Bar
               dataKey='webSiteRedesign'
+              stackId='a'
               fill={chartConfig.webSiteRedesign.color}
-              radius={4}
-            />
-            <Bar
-              dataKey='mobileAppDevelopment'
-              fill={chartConfig.mobileAppDevelopment.color}
-              radius={4}
+              radius={[0, 0, 4, 4]}
             />
             <Bar
               dataKey='marketingCampaign'
+              stackId='a'
               fill={chartConfig.marketingCampaign.color}
-              radius={4}
-            />
-            <Bar
-              dataKey='databaseMigration'
-              fill={chartConfig.databaseMigration.color}
-              radius={4}
-            />
-            <Bar
-              dataKey='productLaunch'
-              fill={chartConfig.productLaunch.color}
-              radius={4}
+              radius={[4, 4, 0, 0]}
             />
           </BarChart>
         </ChartContainer>
       </CardContent>
       <CardFooter className='flex-col items-start gap-2 text-sm'>
         <div className='flex gap-2 font-medium leading-none'>
-          Trending up by 5.2% this month <TrendingUp className='h-4 w-4' />
+          Trending up by 10.9% this month <TrendingUp className='h-4 w-4 text-green-500' />
         </div>
-        <div className='leading-none text-muted-foreground'>Showing total visitors for the last 6 months</div>
+        <div className='leading-none text-muted-foreground'>
+          Showing the proportion of reported hours between two projects for the last 6 months
+        </div>
       </CardFooter>
     </Card>
   )

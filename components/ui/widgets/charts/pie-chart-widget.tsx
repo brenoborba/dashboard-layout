@@ -2,7 +2,8 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
-import { chartConfig, projectsData } from '@/lib/data'
+import { projectsData } from '@/lib/data'
+import { chartConfig } from '@/lib/utils'
 import { TrendingUp } from 'lucide-react'
 import moment from 'moment'
 import * as React from 'react'
@@ -14,7 +15,7 @@ export function PieChartWidget() {
   }, [])
 
   return (
-    <Card className='flex flex-col size-full'>
+    <Card className='flex size-full flex-col'>
       <CardHeader className='items-center pb-0'>
         <CardTitle>Hours reported in the current month</CardTitle>
         <CardDescription>{moment().format('MMMM YYYY')}</CardDescription>

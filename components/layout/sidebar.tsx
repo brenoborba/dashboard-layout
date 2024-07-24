@@ -38,7 +38,7 @@ export const navItems: NavItem[] = [
 const Sidebar = () => {
   const pathname = usePathname()
   return (
-    <aside className='bg-neutral-800 text-neutral-100 p-4 lg:w-52 xl:w-60 hidden lg:block border-neutral-300/50 dark:border-neutral-700/50 dark:bg-neutral-900 xl:space-y-5 lg:space-y-4'>
+    <aside className='hidden border-neutral-300/50 bg-neutral-800 p-4 text-neutral-100 dark:border-neutral-700/50 dark:bg-neutral-900 lg:block lg:w-52 lg:space-y-4 xl:w-60 xl:space-y-5'>
       <Logo />
       <nav>
         <ul className='space-y-2'>
@@ -47,7 +47,7 @@ const Sidebar = () => {
             return (
               <li
                 key={item.name}
-                className={`${isActive ? ' bg-neutral-700 rounded-lg' : 'group hover:bg-neutral-700 rounded-lg'}`}
+                className={`${isActive ? 'rounded-lg bg-neutral-700' : 'group rounded-lg hover:bg-neutral-700'}`}
               >
                 <Link
                   href={item.href}
@@ -55,7 +55,7 @@ const Sidebar = () => {
                 >
                   {item.icon}
                   <span
-                    className={`text-neutral-400 ms-2 xl:pt-0.5 ${isActive ? 'text-white' : 'group-hover:text-white'} transition-colors`}
+                    className={`ms-2 text-neutral-400 xl:pt-0.5 ${isActive ? 'text-white' : 'group-hover:text-white'} transition-colors`}
                   >
                     {item.name}
                   </span>

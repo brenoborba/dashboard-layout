@@ -4,7 +4,7 @@ import Image from 'next/image'
 const Logo = () => {
   return (
     <div className='inline-flex items-center justify-center'>
-      <div className='xs:w-10 xs:h-7 sm:w-12 sm:h-9 relative mr-1 -mb-2 antialiased'>
+      <div className='relative -mb-2 mr-1 antialiased xs:h-7 xs:w-10 sm:h-9 sm:w-12'>
         <Image
           src='/logo.svg'
           fill={true}
@@ -12,8 +12,8 @@ const Logo = () => {
         />
       </div>
       <div className='inline-flex items-center'>
-        <h1 className='font-bold font-poppins text-2xl text-neutral-100 antialiased'>Mobo</h1>
-        <span className='font-normal font-poppins -m-0.5 text-2xl text-neutral-100 antialiased'>Tech</span>
+        <h1 className='font-poppins text-2xl font-bold text-neutral-100 antialiased'>Mobo</h1>
+        <span className='font-poppins -m-0.5 text-2xl font-normal text-neutral-100 antialiased'>Tech</span>
       </div>
     </div>
   )

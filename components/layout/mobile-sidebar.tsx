@@ -37,13 +37,13 @@ const MobileSidebar = (props: Props) => {
     <Backdrop onClick={props.closeMobileNav}>
       <motion.aside
         onClick={(e) => e.stopPropagation()}
-        className='flex flex-col lg:hidden h-screen xs:min-w-[60%] md:min-w-[40%] bg-neutral-800 dark:bg-neutral-900 py-4 px-2 fixed top-0 left-0 z-50 md:px-4 space-y-6'
+        className='fixed left-0 top-0 z-50 flex h-screen flex-col space-y-6 bg-neutral-800 px-2 py-4 dark:bg-neutral-900 xs:min-w-[60%] md:min-w-[40%] md:px-4 lg:hidden'
         variants={variants}
         initial='hidden'
         animate='visible'
         exit='exit'
       >
-        <div className='flex justify-between items-center'>
+        <div className='flex items-center justify-between'>
           <Logo />
           <button>
             <XMarkIcon
@@ -59,7 +59,7 @@ const MobileSidebar = (props: Props) => {
               return (
                 <li
                   key={item.name}
-                  className={`${isActive ? ' bg-neutral-600 rounded-lg' : 'group hover:bg-neutral-600 rounded-lg'}`}
+                  className={`${isActive ? 'rounded-lg bg-neutral-600' : 'group rounded-lg hover:bg-neutral-600'}`}
                 >
                   <Link
                     href={item.href}
@@ -68,7 +68,7 @@ const MobileSidebar = (props: Props) => {
                   >
                     {item.icon}
                     <span
-                      className={`text-neutral-400 ms-2 xl:pt-0.5 ${isActive ? 'text-white' : 'group-hover:text-white'} transition-colors`}
+                      className={`ms-2 text-neutral-400 xl:pt-0.5 ${isActive ? 'text-white' : 'group-hover:text-white'} transition-colors`}
                     >
                       {item.name}
                     </span>

@@ -9,7 +9,7 @@ const Backdrop = (props: Props) => {
   return (
     <motion.div
       onClick={props.onClick}
-      className='absolute top-0 left-0 size-full overflow-x-hidden'
+      className='absolute left-0 top-0 size-full overflow-x-hidden'
     >
       {props.children}
     </motion.div>

@@ -14,18 +14,18 @@ const CoreLayout = ({ children }: { children: ReactNode }) => {
       <AnimatePresence>
         {mobileNavOpen && <MobileSidebar closeMobileNav={(state: boolean) => handleMobileNav(!state)} />}
       </AnimatePresence>
-      <div className='bg-neutral-100 flex-1 dark:bg-neutral-800 flex flex-col overflow-auto'>
+      <div className='flex flex-1 flex-col overflow-y-auto bg-neutral-100 dark:bg-neutral-800'>
         <Header
-          className='flex p-2 w-full border-b border-neutral-200 dark:border-neutral-700'
+          className='flex w-full border-b border-neutral-200 p-2 dark:border-neutral-700'
           handleMobileNav={handleMobileNav}
         />
         <main
           id='content-wrapper'
-          className='flex-1 p-4 xl:py-5 dark:text-zinc-100'
+          className='flex-1 p-4 dark:text-zinc-100 xl:py-5'
         >
           {children}
         </main>
-        <footer className='w-full h-12 p-4 text-neutral-400 text-sm'>
+        <footer className='h-12 w-full p-4 text-sm text-neutral-400'>
           Copyright © 2024 Breno Borba. All Rights Reserved
         </footer>
       </div>
