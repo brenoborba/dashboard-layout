@@ -5,7 +5,8 @@ import { Area, AreaChart, CartesianGrid, XAxis } from 'recharts'
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart'
-import { chartConfig, projectsSeries } from '@/lib/data'
+import { projectsSeries } from '@/lib/data'
+import { chartConfig } from '@/lib/utils'
 
 export function AreaChartWidget() {
   return (
@@ -17,7 +18,7 @@ export function AreaChartWidget() {
       <CardContent>
         <ChartContainer
           config={chartConfig}
-          className='lg:max-h-full w-full'
+          className='w-full lg:max-h-full'
         >
           <AreaChart
             accessibilityLayer

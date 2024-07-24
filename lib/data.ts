@@ -1,4 +1,5 @@
 import { ChartConfig } from '@/components/ui/chart'
+import dynamic from 'next/dynamic'
 
 export type Project = {
   title: string
@@ -8,7 +9,17 @@ export type Project = {
   reportedHours: number
   fill: string
   tasks: number
+  dueDate: string
 }
+
+export const generateRandomDate = () => {
+  const currentDate = new Date()
+  const twoYearsFromNow = new Date(currentDate.getFullYear() + 2, currentDate.getMonth(), currentDate.getDate())
+  const randomTimestamp = currentDate.getTime() + Math.random() * (twoYearsFromNow.getTime() - currentDate.getTime())
+  const randomDate = new Date(randomTimestamp)
+  return randomDate.toISOString().split('T')[0]
+}
+
 export const projectsData: Project[] = [
   {
     title: 'Website Redesign',
@@ -18,6 +29,7 @@ export const projectsData: Project[] = [
     reportedHours: 80.5,
     fill: '#2762d8',
     tasks: 8,
+    dueDate: generateRandomDate(),
   },
   {
     title: 'Mobile App Development',
@@ -27,6 +39,7 @@ export const projectsData: Project[] = [
     reportedHours: 120.0,
     fill: '#2eb88a',
     tasks: 10,
+    dueDate: generateRandomDate(),
   },
   {
     title: 'Marketing Campaign',
@@ -36,15 +49,17 @@ export const projectsData: Project[] = [
     reportedHours: 50.0,
     fill: '#e98d31',
     tasks: 6,
+    dueDate: generateRandomDate(),
   },
   {
     title: 'Database Migration',
     status: 'In Progress',
-    description: "'Migrating the company's database to a new platform for improved performance and scalability.'",
+    description: "Migrating the company's database to a new platform for improved performance and scalability.",
     budgetUsage: 90.0,
     reportedHours: 110.0,
     fill: '#af57dc',
     tasks: 12,
+    dueDate: generateRandomDate(),
   },
   {
     title: 'Product Launch',
@@ -54,6 +69,7 @@ export const projectsData: Project[] = [
     reportedHours: 100.0,
     fill: '#e33670',
     tasks: 7,
+    dueDate: generateRandomDate(),
   },
 ]
 
@@ -108,25 +124,41 @@ export const projectsSeries = [
   },
 ]
 
-export const chartConfig = {
-  webSiteRedesign: {
-    label: 'Web Site Redesign',
-    color: '#ef4444',
+export const people = [
+  {
+    name: 'Olivia Martin',
+    email: 'olivia.martin@email.com',
+    hours: '+6.0 hours',
+    avatarFallback: 'OM',
   },
-  mobileAppDevelopment: {
-    label: 'Mobile App Development',
-    color: '#22c55e',
+  {
+    name: 'Jackson Lee',
+    email: 'jackson.lee@email.com',
+    hours: '+14.0 hours',
+    avatarFallback: 'JL',
   },
-  marketingCampaign: {
-    label: 'Marketing Campaign',
-    color: '#3b82f6',
+  {
+    name: 'Isabella Nguyen',
+    email: 'isabella.nguyen@email.com',
+    hours: '-2.0 hours',
+    avatarFallback: 'IN',
   },
-  databaseMigration: {
-    label: 'Database Migration',
-    color: '#8b5cf6',
+  {
+    name: 'William Kim',
+    email: 'will@email.com',
+    hours: '+10.0 hours',
+    avatarFallback: 'WK',
   },
-  productLaunch: {
-    label: 'Product Launch',
-    color: '#e98d31',
+  {
+    name: 'Sofia Davis',
+    email: 'sofia.davis@email.com',
+    hours: '+12.0 hours',
+    avatarFallback: 'SD',
   },
-} satisfies ChartConfig
+  // {
+  //   name: 'John Smith',
+  //   email: 'john.smith@email.com',
+  //   hours: '+8.0 hours',
+  //   avatarFallback: 'JS',
+  // },
+]

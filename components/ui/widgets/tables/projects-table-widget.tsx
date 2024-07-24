@@ -24,8 +24,8 @@ const ProjectsTableWidget = () => {
             {projectsData.map((project: Project, index) => (
               <TableRow key={index}>
                 <TableCell className='font-semibold'>{project.title}</TableCell>
-                <TableCell className='text-center'>
-                  <Badge status={project.status}>{project.status}</Badge>
+                <TableCell className='w-auto p-4 text-center xs:min-w-32'>
+                  <Badge status={project.status} />
                 </TableCell>
                 <TableCell
                   className={cn('text-center font-semibold', {
@@ -34,8 +34,8 @@ const ProjectsTableWidget = () => {
                     'text-red-500': project.budgetUsage >= 75,
                   })}
                 >{`${project.budgetUsage}%`}</TableCell>
-                <TableCell className='font-semibold text-center'>{`${project.reportedHours}hrs`}</TableCell>
-                <TableCell className='font-semibold text-center'>{project.tasks}</TableCell>
+                <TableCell className='text-center font-semibold'>{`${project.reportedHours}hrs`}</TableCell>
+                <TableCell className='text-center font-semibold'>{project.tasks}</TableCell>
               </TableRow>
             ))}
           </TableBody>
