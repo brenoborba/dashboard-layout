@@ -17,6 +17,10 @@ https://mobotech-dashboard.vercel.app/
 ![image](https://github.com/user-attachments/assets/5955e124-3d44-4f6c-861a-c2f1a3efd21a)
 <image src="https://github.com/user-attachments/assets/fd456ebf-6285-4641-8ef5-64907990daba" width="350px" height="700px" />
 
+### Projects Page:
+![image](https://github.com/user-attachments/assets/f6e5b5d5-2d3d-490d-ae27-67d28e849782)
+<image src="https://github.com/user-attachments/assets/15fd03bd-8f0b-4740-a83d-8fe487fa5f3e" width="350px" height="700px" />
+
 ## Features
 
 - **Responsive Design**: Ensures the dashboard looks great on all screen sizes, from mobile phones to large desktops.
